@@ -1,0 +1,12 @@
+img {
+ 
+  position: relative;
+  animation-name: img;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+}
+@keyframes img {
+
+  10%  { left:0px; top:200px;}
+  100% {left:0px; top:0px;}
+}

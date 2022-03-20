@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+ <html>
+	 <head>
+ 	 <title>table</title>
+	 </head>
+
+	 <body>
+	
+	<table border = "5">
+	<caption><strong><pre>           </pre></strong></caption>
+ 	
+	<thead>
+		<tr> 
+		<th><pre>           </pre></th> 
+		
+		
+		</tr>
+	</thead>
+
+	<tbody>
+		<tr>
+		
+		<td rowspan="2"><pre>     </pre></td>
+		<td><pre>      </pre></td>
+		<td><pre>          </pre></td>
+		</tr>
+
+		<tr>
+		<td><pre>           </pre></td>
+		<td><pre>           </pre></td>
+		
+		</tr>
+	</tbody>
+
+	</table>
+ </body> 
+
+ </html>
