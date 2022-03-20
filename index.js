@@ -7,12 +7,6 @@ require('dotenv').config();
 const port=process.env.PORT||3000;
 
 const app= express();
-
-
-
-
-
-
 app.use(express.static("public"));
 app.set('view engine','ejs');
 app.use(bodyparser.urlencoded({
@@ -23,7 +17,10 @@ app.get("/",function(req,res){
    
     res.render("home");
 });
-
+app.get("/register",function(req,res){
+   
+    res.render("register");
+});
 
 app.get("/login",function(req,res){
    
