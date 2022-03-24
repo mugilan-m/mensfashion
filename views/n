@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card" style="width: 18rem;">
+        <img id="myImage" src="img/14.png" class="card-img-top" alt="Casual Shirts">
+        <div class="card-body">
+            <div >
+                
+                   <p  id="circle" class="button button5" width="100px;" height="100px;"style="background-color: rgb(82, 80, 82);"  onclick="document.getElementById('myImage').src='img/14.png' "></p>
+                   <p  id="circle" class="button button5" width="100px;" height="100px;" style="background-color:  rgb(240, 12, 228);"onclick="document.getElementById('myImage').src='img/15.png'"></p>
+                   <p  id="circle" class="button button5"  width="100px;" height="100px;" style="background-color:rgb(36, 2, 92);"onclick="document.getElementById('myImage').src='img/16.png'"></p>
+                   
+             </div>
+          <h5 class="card-title"> Shirts</h5>
+          <p class="card-text"><h5>Men's Regular Fit Casual Shirt</h5></p>
+          <p class="card-text"><h5 style="color: green;">₹444 <span style="color: red;"><del>₹1000</del></span></h5></p>
+         
+          <a href="#" class="btn btn-primary" style="background-color: green;">Buy</a><a href="#" class="btn btn-primary" style="background-color:cadetblue;margin-left: 17px;"> Cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card" style="width: 18rem;">
+        <img id="myImage" src="img/14.png" class="card-img-top" alt="Casual Shirts">
+        <div class="card-body">
+            <div >
+                
+                   <p  id="circle" class="button button5" width="100px;" height="100px;"style="background-color: rgb(82, 80, 82);"  onclick="document.getElementById('myImage').src='img/14.png' "></p>
+                   <p  id="circle" class="button button5" width="100px;" height="100px;" style="background-color:  rgb(240, 12, 228);"onclick="document.getElementById('myImage').src='img/15.png'"></p>
+                   <p  id="circle" class="button button5"  width="100px;" height="100px;" style="background-color:rgb(36, 2, 92);"onclick="document.getElementById('myImage').src='img/16.png'"></p>
+                   
+             </div>
+          <h5 class="card-title"> Shirts</h5>
+          <p class="card-text"><h5>Men's Regular Fit Casual Shirt</h5></p>
+          <p class="card-text"><h5 style="color: green;">₹444 <span style="color: red;"><del>₹1000</del></span></h5></p>
+         
+          <a href="#" class="btn btn-primary" style="background-color: green;">Buy</a><a href="#" class="btn btn-primary" style="background-color:cadetblue;margin-left: 17px;"> Cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

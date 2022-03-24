@@ -11,7 +11,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mens Fashion</title>
 </head>
+<style>
+    
+cl.src
+{
+width:200px;
+}
+
+.button {
+  background-color:#0000a0;
+  border: none;
+  color: white;
+  padding: 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button5 {border-radius: 100%;}
+</style>
 <body>
+    <div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
           <a class="navbar-brand" href="#"></a><h1>Mens Fashion</h1></a>
@@ -50,27 +73,96 @@
           </div>
         </div>
       </nav>
-    <img src="img/card.png" class="img-fluid" alt="Responsive image" width="100%">
-    
-        <div class="container-fluid">
-        
+    </div>
+    <div>
+      <img src="img/card.png" class="img-fluid" alt="Responsive image" width="100%"/>
+    </div>
+<!-- 
         <div class="card" style="width: 18rem;">
-            <img src="img/14.png" class="card-img-top" alt="Casual Shirts">
+            <img id="myImage" src="img/14.png" class="card-img-top" alt="Casual Shirts">
             <div class="card-body">
                 <div >
-                    <p><h1 id="circle"></h1>
-                       <h1 id="circle" style="margin-left:20%;margin-top:-15%;"></h1>
-                       <h1 id="circle" style="margin-left:40%;margin-top:-15%;"></h1>
-                       </p> 
-                     
+                    
+                       <p  id="circle" class="button button5" width="100px;" height="100px;"style="background-color: rgb(82, 80, 82);"  onclick="document.getElementById('myImage').src='img/14.png' "></p>
+                       <p  id="circle" class="button button5" width="100px;" height="100px;" style="background-color:  rgb(240, 12, 228);"onclick="document.getElementById('myImage').src='img/15.png'"></p>
+                       <p  id="circle" class="button button5"  width="100px;" height="100px;" style="background-color:rgb(36, 2, 92);"onclick="document.getElementById('myImage').src='img/16.png'"></p>
+                       
                  </div>
-              <h5 class="card-title">Shirts</h5>
+              <h5 class="card-title"> Shirts</h5>
               <p class="card-text"><h5>Men's Regular Fit Casual Shirt</h5></p>
               <p class="card-text"><h5 style="color: green;">₹444 <span style="color: red;"><del>₹1000</del></span></h5></p>
              
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <a href="#" class="btn btn-primary" style="background-color: green;">Buy</a><a href="#" class="btn btn-primary" style="background-color:cadetblue;margin-left: 17px;"> Cart</a>
             </div>
           </div>
+        </div>
+ 
+        
+      </div>
+     -->
+     
+     <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <img id="myImage" src="img/14.png" class="card-img-top" alt="Casual Shirts">
+          <div class="card-body">
+            <div >
+                
+                   <p  id="circle" class="button button5" width="100px;" height="100px;"style="background-color: rgb(82, 80, 82);"  onclick="document.getElementById('myImage').src='img/14.png' "></p>
+                   <p  id="circle" class="button button5" width="100px;" height="100px;" style="background-color:  rgb(240, 12, 228);"onclick="document.getElementById('myImage').src='img/15.png'"></p>
+                   <p  id="circle" class="button button5"  width="100px;" height="100px;" style="background-color:rgb(36, 2, 92);"onclick="document.getElementById('myImage').src='img/16.png'"></p>
+                   
+             </div>
+          <h5 class="card-title"> Shirts</h5>
+          <p class="card-text"><h5>Men's Regular Fit Casual Shirt</h5></p>
+          <p class="card-text"><h5 style="color: green;">₹444 <span style="color: red;"><del>₹1000</del></span></h5></p>
+         
+          <a href="#" class="btn btn-primary" style="background-color: green;">Buy</a><a href="#" class="btn btn-primary" style="background-color:cadetblue;margin-left: 17px;"> Cart</a>
+        </div>
+         
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img id="myImage1" src="img/14.png" class="card-img-top" alt="Casual Shirts">
+          <div class="card-body">
+            <div >
+                
+                   <p  id="circle" class="button button5" width="100px;" height="100px;"style="background-color: rgb(82, 80, 82);"  onclick="document.getElementById('myImage1').src='img/14.png' "></p>
+                   <p  id="circle" class="button button5" width="100px;" height="100px;" style="background-color:  rgb(240, 12, 228);"onclick="document.getElementById('myImage1').src='img/15.png'"></p>
+                   <p  id="circle" class="button button5"  width="100px;" height="100px;" style="background-color:rgb(36, 2, 92);"onclick="document.getElementById('myImage1').src='img/16.png'"></p>
+                   
+             </div>
+          <h5 class="card-title"> Shirts</h5>
+          <p class="card-text"><h5>Men's Regular Fit Casual Shirt</h5></p>
+          <p class="card-text"><h5 style="color: green;">₹444 <span style="color: red;"><del>₹1000</del></span></h5></p>
+         
+          <a href="#" class="btn btn-primary" style="background-color: green;">Buy</a><a href="#" class="btn btn-primary" style="background-color:cadetblue;margin-left: 17px;"> Cart</a>
+        </div>
+         
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img id="myImage2" class="img" src="img/14.png" class="card-img-top" alt="Casual Shirts">
+          <div class="card-body">
+            <div >
+                
+                   <p  id="circle" class="button button5"class="img" width="100px;" height="100px;"style="background-color: rgb(82, 80, 82);"  onclick="document.getElementById('myImage2').src='img/14.png' "></p>
+                   <p  id="circle" class="button button5"  class="img" width="100px;" height="100px;" style="background-color:  rgb(240, 12, 228);"onclick="document.getElementById('myImage2').src='img/15.png'"></p>
+                   <p  id="circle" class="button button5"  class="img" width="100px;" height="100px;" style="background-color:rgb(36, 2, 92);"onclick="document.getElementById('myImage2').src='img/16.png'"></p>
+                   
+             </div>
+          <h5 class="card-title"> Shirts</h5>
+          <p class="card-text"><h5>Men's Regular Fit Casual Shirt</h5></p>
+          <p class="card-text"><h5 style="color: green;">₹444 <span style="color: red;"><del>₹1000</del></span></h5></p>
+         
+          <a href="#" class="btn btn-primary" style="background-color: green;">Buy</a><a href="#" class="btn btn-primary" style="background-color:cadetblue;margin-left: 17px;"> Cart</a>
+        </div>
+         
+        </div>
+      </div>
     </div>
 </body>
+<script src="js/script.js"></script>
 </html>
