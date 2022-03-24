@@ -55,7 +55,10 @@ app.get("/index",function(req,res){
    
     res.render("index");
 });
-
+app.get("/index",function(req,res){
+   
+    res.render("index");
+});
 
 app.post("/register",function(req,res){
     const newUser = new User({
@@ -74,7 +77,29 @@ app.post("/register",function(req,res){
         }
     })
 })
+app.post("/login",function(req,res){
+    const username = req.body.username;
+    const email = req.body.email;
+    const password = req.body.password;
 
+    User.findOne({email:email},function(err,foundUser){
+        if(err)
+        {
+            console.log(err);
+        }
+        else{
+            if(foundUser)
+            {
+                if(foundUser.password === password)
+                {
+                    console.log(foundUser);
+                    res.redirect("index");
+                }
+
+            }
+        }
+    })
+})
 app.listen(port,()=> 
 console.log("server run on port at http://localhost:3000"));
 
