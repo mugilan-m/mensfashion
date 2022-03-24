@@ -1,0 +1,12 @@
+.body
+{
+
+background-color: #f907fc;
+background-image: linear-gradient(315deg, #f907fc 0%, #05d6d9 74%);
+}
+#circle {
+    background: lightblue;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}

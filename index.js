@@ -59,7 +59,9 @@ app.get("/index",function(req,res){
    
     res.render("index");
 });
-
+app.get("/main",function(req,res){
+    res.render("main");
+})
 app.post("/register",function(req,res){
     const newUser = new User({
         username:req.body.username,
