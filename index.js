@@ -62,6 +62,9 @@ app.get("/index",function(req,res){
 app.get("/main",function(req,res){
     res.render("main");
 })
+app.get("/collections",function(req,res){
+    res.render("collections");
+})
 app.post("/register",function(req,res){
     const newUser = new User({
         username:req.body.username,
@@ -75,7 +78,7 @@ app.post("/register",function(req,res){
             console.log(err);
         }
         else{
-            res.redirect("index");
+            res.redirect("main");
         }
     })
 })
