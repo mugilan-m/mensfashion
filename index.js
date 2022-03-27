@@ -78,7 +78,7 @@ app.post("/register",function(req,res){
             console.log(err);
         }
         else{
-            res.redirect("main");
+            res.render("login");
         }
     })
 })
@@ -98,7 +98,7 @@ app.post("/login",function(req,res){
                 if(foundUser.password === password)
                 {
                     console.log(foundUser);
-                    res.redirect("index");
+                    res.render("main",{username:username});
                 }
 
             }
