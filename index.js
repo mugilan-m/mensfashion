@@ -29,13 +29,24 @@ const userSchema =new mongoose.Schema({
     password:String
     
 });
+const addproducts =new mongoose.Schema({
+
+    name:String,
+    size:String,
+    image:String,
+    color:String,
+    price:String,
+    discription:String,
+    
+});
+
+
+
+
 
 const User = new mongoose.model("user",userSchema);
 
-
-
-
-
+const Addproducts = new mongoose.model("products",addproducts);
 
 app.get("/",function(req,res){
    
@@ -58,6 +69,10 @@ app.get("/index",function(req,res){
 app.get("/index",function(req,res){
    
     res.render("index");
+});
+app.get("/admin",function(req,res){
+   
+    res.render("admin");
 });
 app.get("/main",function(req,res){
     res.render("main");
@@ -102,6 +117,28 @@ app.post("/login",function(req,res){
                 }
 
             }
+        }
+    })
+})
+app.post("/addproducts",function(req,res){
+    const product = new Addproducts({
+        name:req.body.name,
+        size:req.body.size,
+        image:req.body.image,
+        color:req.body.color,
+        price:req.body.price,
+        discription:req.body.discription
+        
+    });
+    product.save(function(err)
+    {
+        if(err)
+        {
+            console.log(err);
+        }
+        else{
+            console.log(product);
+            // res.send("<h1>product added successsfully!!</h1>");
         }
     })
 })
