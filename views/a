@@ -1,23 +1,10 @@
-<form>
-    <h1>PRODUCT NAME:</h1>
-    <input type="text" >
-      <h1>SIZE:</h1>
-    <select name="cars" id="cars">
-  <option value="volvo">S</option>
-  <option value="saab">M</option>
-  <option value="mercedes">L</option>
-  <option value="audi">XL</option>
-  <option value="audi">XXL</option>
-  <option value="audi">XXXL</option>
-</select>
-      <h1>COLOR:</h1>
-    <input type="color" >
-      <h1>PRICE:</h1>
-    <input type="text" >
-     <h1>IMAGE:</h1>
-    <input type="file" >
-   <h1>SUBMIT:</h1>
-    <input type="submit" >
-    <h1>CANCEL:</h1>
-    <input type="reset" >
-    </form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<div id="toasts"></div>
+
+
+<button data-type="types" data-kind="success">Success</button>
+<button data-type="types" data-kind="error">Error</button>
+<button data-type="types" data-kind="warning">Warning</button>
+<button data-type="types" data-kind="info">Info</button>
+<!-- end demo code -->

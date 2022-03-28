@@ -56,7 +56,10 @@ app.get("/register",function(req,res){
    
     res.render("register");
 });
-
+app.get("/product",function(req,res){
+   
+    res.render("product");
+});
 app.get("/login",function(req,res){
    
     res.render("login");
@@ -76,6 +79,9 @@ app.get("/admin",function(req,res){
 });
 app.get("/main",function(req,res){
     res.render("main");
+})
+app.get("/shirts",function(req,res){
+    res.render("shirts");
 })
 app.get("/collections",function(req,res){
     res.render("collections");
@@ -136,12 +142,30 @@ app.post("/addproducts",function(req,res){
         {
             console.log(err);
         }
-        else{
-            console.log(product);
-            // res.send("<h1>product added successsfully!!</h1>");
+        // else{
+        //     console.log(product);
+        //     // res.send("<h1>product added successsfully!!</h1>");
+        // }
+        else {
+            
+            Addproducts.find({},function(err,found)
+          {  if(err)
+            {
+              
+            }
+            else
+            {
+             console.log(found);
+             res.render("products",{detail:found});
+            }
+        });
+          
         }
+       
     })
 })
+
+
 app.listen(port,()=> 
 console.log("server run on port at http://localhost:3000"));
 
