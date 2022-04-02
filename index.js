@@ -4,8 +4,10 @@ const bodyparser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
 require('dotenv').config();
+// const store = require("./multer.js");
+const store = require("./multer");
 const port=process.env.PORT||3000;
-
+const fs = require('fs');
 const app= express();
 app.use(express.static("public"));
 app.set('view engine','ejs');
@@ -51,7 +53,7 @@ const Addproducts = new mongoose.model("products",addproducts);
 app.get("/",function(req,res){
    
     res.render("home");
-});
+}); 
 app.get("/register",function(req,res){
    
     res.render("register");
@@ -69,6 +71,11 @@ app.get("/index",function(req,res){
    
     res.render("index");
 });
+// app.get("/addproducts",function(req,res){
+   
+//     res.send("<h1>mens fashion</h1>");
+// });
+
 app.get("/index",function(req,res){
    
     res.render("index");
@@ -126,11 +133,17 @@ app.post("/login",function(req,res){
         }
     })
 })
-app.post("/addproducts",function(req,res){
+app.post("/addproducts",store.single('image'),function(req,res){
+    console.log(req.file);
+
+    const temp = fs.readFileSync(req.file.path);
+    const imageBase64 = "data:"+req.file.mimetype+";base64,"+temp.toString('base64');
+  //  console.log(imageBase64);
+
     const product = new Addproducts({
         name:req.body.name,
         size:req.body.size,
-        image:req.body.image,
+        image:imageBase64,
         color:req.body.color,
         price:req.body.price,
         discription:req.body.discription
@@ -155,7 +168,7 @@ app.post("/addproducts",function(req,res){
             }
             else
             {
-             console.log(found);
+            //  console.log(found);
              res.render("products",{detail:found});
             }
         });

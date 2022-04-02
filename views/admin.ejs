@@ -14,7 +14,7 @@
 <body>
     <div class="container-fluid">
       <div style="width:50%;justify-content: center;margin-left: 20%;">
-           <form method="post" action="/addproducts">
+           <form method="post" action="/addproducts" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">PRODUCT NAME</label>
                 <input type="text" class="form-control" name="name"id="exampleFormControlInput1" >
@@ -22,13 +22,13 @@
             
             <select class="form-select" name="size" >
                 <option selected>SIZE</option>
-                <option value="1">L</option>
-                <option value="2">S</option>
-                <option value="3">M</option>
-                <option value="3">XL</option>
-                <option value="3">XLL</option>
-                <option value="3">XXXL</option>
-                <option value="3">FREE SIZE</option>
+                <option >L</option>
+                <option >S</option>
+                <option >M</option>
+                <option >XL</option>
+                <option >XLL</option>
+                <option >XXXL</option>
+                <option >FREE SIZE</option>
               </select>
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">PRODUCT IMAGE</label>
