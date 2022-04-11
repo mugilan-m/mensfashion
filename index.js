@@ -76,10 +76,14 @@ app.get("/index",function(req,res){
    
     res.render("index");
 });
-// app.get("/addproducts",function(req,res){
+ app.get("/addproducts",function(req,res){
    
-//     res.send("<h1>mens fashion</h1>");
-// });
+     res.render("addproducts");
+ });
+ app.get("/products",function(req,res){
+   
+    res.render("products");
+});
 
 app.get("/index",function(req,res){
    
@@ -152,7 +156,8 @@ app.post("/addproducts",store.single('image'),function(req,res){
         color:req.body.color,
         price:req.body.price,
         dprice:req.body.dprice,
-        discription:req.body.discription
+        discription:req.body.discription,
+        id:req.body.id
         
     });
     product.save(function(err)
@@ -184,15 +189,47 @@ app.post("/addproducts",store.single('image'),function(req,res){
     })
 })
 //delete
-app.delete("/userdb/:products/:._id", function(req, res, next) {
-    req.products.removeById(req.params.id, function(err, output) {
-      if (err) {
-        return next(err);
-      }
-      res.send(output === 1 ? { msg: "success" } : { msg: "error" });
-    });
-  });
 
+// app.get("/delete/._id",function(req,res){
+//     product.deleteOne(
+//         {id:req.params.id},
+//         function(err){
+//             if(!err)
+//             {
+//                 res.send("product deleted successfully");
+//                 console.log("product deleted successfully");
+//             }
+//             else
+//             {
+//                 res.send(err);
+//             }
+//         }
+//     );
+// });
+/* DELETE product. */
+
+  app.get('id', (req, res, next) => {
+    const id = req.params.id;
+    product.deleteOne(id, (err) => {
+     if (err) return next(err);
+     res.send({ message: 'Deleted' });
+    });
+   });
+  //
+  app.post("/delete",function(req,res)
+  {
+      console.log(req.body.id);
+      Addproducts.deleteOne({_id:req.body.id},function(err)
+      {
+          if(!err)
+          {
+    console.log("deleted");
+    res.redirect("/addproducts");
+          }
+
+      });
+
+  });
 
 app.listen(port,()=> 
 console.log("server run on port at http://localhost:3000"));
