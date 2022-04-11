@@ -8,6 +8,7 @@ require('dotenv').config();
 const store = require("./multer");
 const port=process.env.PORT||3000;
 const fs = require('fs');
+const { hasUncaughtExceptionCaptureCallback } = require("process");
 const app= express();
 app.use(express.static("public"));
 app.set('view engine','ejs');
@@ -38,7 +39,8 @@ const addproducts =new mongoose.Schema({
     image:String,
     color:String,
     price:String,
-    discription:String,
+    dprice:String,
+    discription:String
     
 });
 
@@ -62,6 +64,9 @@ app.get("/product",function(req,res){
    
     res.render("product");
 });
+app.get("/db",function(req,res){
+    res.render("db");
+})
 app.get("/login",function(req,res){
    
     res.render("login");
@@ -146,6 +151,7 @@ app.post("/addproducts",store.single('image'),function(req,res){
         image:imageBase64,
         color:req.body.color,
         price:req.body.price,
+        dprice:req.body.dprice,
         discription:req.body.discription
         
     });
@@ -177,6 +183,15 @@ app.post("/addproducts",store.single('image'),function(req,res){
        
     })
 })
+//delete
+app.delete("/userdb/:products/:._id", function(req, res, next) {
+    req.products.removeById(req.params.id, function(err, output) {
+      if (err) {
+        return next(err);
+      }
+      res.send(output === 1 ? { msg: "success" } : { msg: "error" });
+    });
+  });
 
 
 app.listen(port,()=> 

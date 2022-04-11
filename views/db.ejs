@@ -112,11 +112,8 @@
         <h2 class="card-title">Price:</h2>
         <a class="card-text" style="color:darkblue;font-size: 20px; text-decoration: none ;color: green;"><h5><%= data.price %></h5><span style="color: red;"><del><h5><%= data.dprice %></h5></del></span></a>
         <a class="card-text" style="color:darkblue;font-size: 20px; text-decoration: none;color: darkgray;"><h5><%= data.discription %></h5></a>
-        
         <a href="/update" class="btn btn-success">Update</a>
-        <form method="post" action="/delete">
-        <a href="/delete/._id<%= data._id %>" name="Remove"class="btn btn-danger" onchange="this.form.submit()">Remove</a>
-      </form>
+        <a href="/delete&id=<%= data._id %>" class="btn btn-danger">Remove</a>
       </div>
     </div>
   </div>
