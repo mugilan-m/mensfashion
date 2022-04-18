@@ -113,12 +113,12 @@
         <a class="card-text" style="color:darkblue;font-size: 20px; text-decoration: none ;color: green;"><h5><%= data.price %></h5><span style="color: red;"><del><h5><%= data.dprice %></h5></del></span></a>
         <a class="card-text" style="color:darkblue;font-size: 20px; text-decoration: none;color: darkgray;"><h5><%= data.discription %></h5></a>
         <div class="container-fluid">
-        <a href="/update" class="btn btn-success">Update</a>
+        <a href="/update" class="btn btn-success" style="margin-right: 30%;">Update</a>
         
       <!-- <a class="btn btn-danger" href="/admin/edit.product/<%= data.id %>" name="Remove" role="button">Edit</a> -->
      <form action="/delete" method="post">
        <input type="hidden" name="id" value="<%= data._id %>">
-     <button type="submit" class="btn btn-primary">Delete</button>
+     <button type="submit" class="btn btn-danger" style="margin-right: 30%;margin-left: 60px;">Delete</button>
       </form>
     </div>
       </div>

@@ -142,7 +142,7 @@ app.post("/login",function(req,res){
         }
     })
 })
-app.post("/addproducts",store.single('image'),function(req,res){
+app.post("/products",store.single('image'),function(req,res){
     console.log(req.file);
 
     const temp = fs.readFileSync(req.file.path);
@@ -224,7 +224,7 @@ app.post("/addproducts",store.single('image'),function(req,res){
           if(!err)
           {
     console.log("deleted");
-    res.redirect("/addproducts");
+    res.send("<h1>product deleted successfully!!!</h1>");
           }
 
       });
