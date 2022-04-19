@@ -224,7 +224,7 @@ app.post("/products",store.single('image'),function(req,res){
           if(!err)
           {
     console.log("deleted");
-    res.send("<h1>product deleted successfully!!!</h1>");
+   
           }
 
       });
