@@ -40,7 +40,8 @@ const addproducts =new mongoose.Schema({
     color:String,
     price:String,
     dprice:String,
-    discription:String
+    discription:String,
+    type:String
     
 });
 
@@ -66,6 +67,9 @@ app.get("/product",function(req,res){
 });
 app.get("/db",function(req,res){
     res.render("db");
+})
+app.get("/index",function(req,res){
+    res.render("index");
 })
 app.get("/login",function(req,res){
    
@@ -157,7 +161,8 @@ app.post("/products",store.single('image'),function(req,res){
         price:req.body.price,
         dprice:req.body.dprice,
         discription:req.body.discription,
-        id:req.body.id
+        id:req.body.id,
+        type:req.body.type
         
     });
     product.save(function(err)
@@ -208,14 +213,14 @@ app.post("/products",store.single('image'),function(req,res){
 // });
 /* DELETE product. */
 
-  app.get('id', (req, res, next) => {
-    const id = req.params.id;
-    product.deleteOne(id, (err) => {
-     if (err) return next(err);
-     res.send({ message: 'Deleted' });
-    });
-   });
-  //
+//   app.get('id', (req, res, next) => {
+//     const id = req.params.id;
+//     product.deleteOne(id, (err) => {
+//      if (err) return next(err);
+//      res.send({ message: 'Deleted' });
+//     });
+//    });
+//   //
   app.post("/delete",function(req,res)
   {
       console.log(req.body.id);
@@ -223,13 +228,68 @@ app.post("/products",store.single('image'),function(req,res){
       {
           if(!err)
           {
+            Addproducts.find({},function(err,found)
+            {  if(err)
+              {
+                
+              }
+              else
+              {
+              //  console.log(found);
+               res.render("products",{detail:found});
+              }
+          });
     console.log("deleted");
-   
+   //res.redirect("products");
           }
+
+
 
       });
 
   });
+
+  app.post("/update",function(req,res)
+  {
+    console.log(req.body.id);
+    Addproducts.updateOne({_id:req.body.id},{name:req.body.name},{},function(err)
+    {
+        if(!err)
+        {
+          Addproducts.find({},function(err,found)
+          {  if(err)
+            {
+              
+            }
+            else
+            {
+            //  console.log(found);
+             res.render("products",{detail:found});
+            }
+        });
+  console.log("deleted");
+ //res.redirect("products");
+        }
+
+
+
+    });
+    
+
+  });
+//
+app.post("/show",function(req,res)
+{
+var type=req.body.type;
+console.log(type);
+
+Addproducts.find({type:type},function(err,found){
+if(!err)
+{
+    res.render("show",{detail:found});
+}
+});
+});
 
 app.listen(port,()=> 
 console.log("server run on port at http://localhost:3000"));
