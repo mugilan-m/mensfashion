@@ -9,13 +9,135 @@
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mens Fashion</title>
+    <title>Fashioner</title>
 </head>
 <style>
 
 cl.src
 {
 width:100px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Andika&family=Julius+Sans+One&display=swap');
+*{
+  padding:0;
+  margin:0;
+}
+body{
+ 
+  background-attachment:fixed;
+  background-size:cover;
+  background-position:center center;
+  box-sizing:border-box;
+  font-family: 'Andika', sans-serif;
+}
+body:before{
+  content:'';
+  background-color:rgba(249, 246, 246, 0.7);
+  position:absolute;
+  height:100%;
+  width:100%;
+  left:0;
+  top:0;
+}
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Julius Sans One', sans-serif;
+  margin-bottom:20px;
+}
+.container{
+  position:relative;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  z-index:2;
+  height:100vh;
+}
+.container .card{
+  vertical-align:top;
+  width:280px;
+  height:450px;
+  position:relative;
+  margin:30px;
+  box-shadow: 20px 20px 50px rgba(0,0,0,0.8);
+  border-radius:25px;
+  background-color:#ffff;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  backdrop-filter:blur(5px);
+  text-align:center;
+}
+.card .content{
+  padding:20px;
+  transition:0.8s all ease;
+  transform:translateY(200px);
+  opacity:0;
+}
+.card:hover .content{
+  transform:translateY(0px);
+  opacity:1;
+}
+.card img{
+  position:absolute;
+  width:350px;
+  height:500px;
+  top:0px;
+  z-index:-1;
+}
+h1{
+  color:#fff;
+  text-align:center;
+  z-index:9;
+  position:relative;
+  margin-bottom:-20px;
+  padding-bottom:0;
+  padding-top:20px;
+  font-weight:400;
+}
+.card .content h2{
+  color:#fff;
+  font-weight:400;
+}
+
+.glow {
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+.card .content button{
+  display:inline-block;
+  margin-top:20px;
+  text-decoration:none;
+  padding:8px 30px 11px;
+  border:2px solid #fff;
+  text-transform:uppercase;
+  color:rgb(7, 7, 7);
+  border-radius:50px;
+
+  transition:0.8s all ease;
+}
+.card .content button:hover{
+  background: #9C27B0;
+}
+
+
+
+@media only screen and (max-width:900px) {
+  .container{
+    display:block;
+  }
 }
 
 .button {
@@ -32,34 +154,275 @@ width:100px;
 }
 
 .button5 {border-radius: 100%;}
+:root {
+  --cards-column-gap-gs-blur-cards: 24px;
+  --cards-row-gap-gs-blur-cards: 24px;
+  --card-max-height-gs-blur-cards: 400px;
+  --card-min-height-gs-blur-cards: 200px;
+  --card-over-header-color-gs-blur-cards: rgba(255, 255, 255, 0.6);
+  --card-header-color-gs-blur-cards: rgba(255, 255, 255, 0.9);
+  --card-content-color-gs-blur-cards: white;
+  --card-hover-transition-speed-gs-blur-cards: 0.3s;
+  --card-header-font-size-gs-blur-cards: 1.5rem;
+  --card-over-header-font-size-gs-blur-cards: 0.9rem;
+  --card-container-padding-gs-blur-cards: 30px;
+  --card-scroll-thumb-color-gs-blur-cards: #1b1b1b;
+  --card-scroll-thumb-hover-color-gs-blur-cards: #141414;
+  --card-on-hover-border-size-gs-blur-cards: 3px;
+  --card-data-text-shadow-gs-blur-cards: black 1px 0 10px;
+  --card-border-radius-gs-blur-cards: 10px;
+}
+
+* {
+  margin: 0;
+}
+
+.gs-cards-container {
+  align-items: flex-start;
+  display: flex;
+  justify-content: center;
+  padding: var(--card-container-padding-gs-blur-cards);
+  background-image: linear-gradient(to right, #fcfeff, #fafcfc);
+}
+
+.gs-cards-container .gs-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: var(--cards-column-gap-gs-blur-cards);
+  grid-row-gap: var(--cards-row-gap-gs-blur-cards);
+  max-width: 100%;
+  width: 100%;
+}
+
+@media only screen and (min-width: 320px) {
+  .gs-cards-container .gs-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (min-width: 540px) {
+  .gs-cards-container .gs-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media only screen and (min-width: 800px) {
+  .gs-cards-container .gs-cards-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .gs-cards-container .gs-cards-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+@media only screen and (min-width: 1900px) {
+  .gs-cards-container .gs-cards-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.gs-cards-container .gs-cards-grid .gs-card {
+  display: block;
+  width: 100%;
+  min-height: var(--card-min-height-gs-blur-cards);
+  height: 40vw;
+  max-height: var(--card-max-height-gs-blur-cards);
+  border-radius: var(--card-border-radius-gs-blur-cards);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+  transition: var(--card-hover-transition-speed-gs-blur-cards);
+  position: relative;
+}
+
+.gs-cards-container .gs-cards-grid .gs-card .gs-card-data {
+  width: 90%;
+  height: 95%;
+  padding: 5%;
+  border-radius: 10px;
+  overflow-y: auto;
+}
+
+.gs-cards-container .gs-cards-grid .gs-card .gs-card-data .gs-card-header {
+  color: var(--card-header-color-gs-blur-cards);
+  font-size: var(--card-header-font-size-gs-blur-cards);
+  line-height: 1.4;
+  font-weight: bold;
+  text-shadow: var(--card-data-text-shadow-gs-blur-cards);
+}
+
+.gs-cards-container .gs-cards-grid .gs-card .gs-card-data .gs-card-over-header {
+  color: var(--card-over-header-color-gs-blur-cards);
+  font-size: var(--card-over-header-font-size-gs-blur-cards);
+  margin-bottom: var(--spacing-s);
+  text-transform: uppercase;
+  text-shadow: var(--card-data-text-shadow-gs-blur-cards);
+}
+
+.gs-cards-container .gs-cards-grid .gs-card:hover {
+  transform: scale(1.05) translateZ(0);
+}
+
+.gs-cards-container .gs-cards-grid .gs-card:hover > .gs-card-data {
+  background-color: #00000075;
+}
+
+.gs-cards-container .gs-cards-grid .gs-card.gs-card-blured {
+  filter: blur(5px);
+}
+
+.gs-cards-container
+  .gs-cards-grid
+  .gs-card:hover
+  > .gs-card-data
+  .gs-card-content {
+  opacity: 1;
+  height: auto;
+}
+
+.gs-cards-container .gs-cards-grid .gs-card .gs-card-data .gs-card-content {
+  color: var(--card-content-color-gs-blur-cards);
+  word-wrap: break-word;
+  width: 85%;
+  padding-top: 10px;
+  transition: opacity var(--card-hover-transition-speed-gs-blur-cards) ease-out;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  text-shadow: var(--card-data-text-shadow-gs-blur-cards);
+}
+
+.gs-cards-container .gs-cards-grid .gs-card .gs-card-data::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.gs-cards-container
+  .gs-cards-grid
+  .gs-card
+  .gs-card-data::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 5px;
+}
+
+.gs-cards-container
+  .gs-cards-grid
+  .gs-card
+  .gs-card-data::-webkit-scrollbar-thumb {
+  background: var(--card-scroll-thumb-color-gs-blur-cards);
+  border-radius: 5px;
+}
+
+.gs-cards-container
+  .gs-cards-grid
+  .gs-card
+  .gs-card-data::-webkit-scrollbar-thumb:hover {
+  background: var(--card-scroll-thumb-hover-color-gs-blur-cards);
+}
+
 </style>
+<script>
+  var allCards = document.getElementsByClassName("gs-card");
+
+for (var i = 0; i < allCards.length; i++) {
+  allCards[i].addEventListener("mouseover", changeBluredCard, false);
+  allCards[i].addEventListener("mouseout", changeBluredCard, false);
+}
+
+function changeBluredCard() {
+  let flag = true;
+  for (var i = 0; i < allCards.length; i++) {
+    if (allCards[i].matches(":hover")) {
+      flag = false;
+      allCards[i].classList.remove("gs-card-blured");
+    } else {
+      allCards[i].classList.add("gs-card-blured");
+    }
+  }
+
+  if (flag) {
+    for (var i = 0; i < allCards.length; i++) {
+      allCards[i].classList.remove("gs-card-blured");
+    }
+  }
+}
+
+</script>
 <body>
     <div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#"></a><h1>Mens Fashion</h1></a>
+          <a class="navbar-brand" href="#" ></a><h1 style="color: black;">Fashioner</h1></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-1 mb-lg-0">
               <li class="nav-item" style="margin-left: 20%;">
-                <a class="nav-link active" aria-current="page" href="#"><h4>Home</h4></a>
+                <a class="nav-link active" aria-current="page" href="#" style="Font-family:Helvetica, Arial, sans-serif;
+
+                Font-size : 14px;
+                
+                Font-weight: 500;
+                
+                Line-height: 80px;
+                
+                Font-color: rgb(40, 44, 63)"><h4>Home</h4></a>
               </li>
    
               <li class="nav-item dropdown" style="margin-left: 20%;">
-                <a class="nav-link active" href="collections" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link active" href="collections" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="Font-family:Helvetica, Arial, sans-serif;
+
+                Font-size : 14px;
+                
+                Font-weight: 500;
+                
+                Line-height: 80px;
+                
+                Font-color: rgb(40, 44, 63)">
                     <h4>Arrivals</h4>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="collections"><h5>collections</h5></a></li>
-                  <li><a class="dropdown-item" href="#"><h5>Mens</h5></a></li>
+                  <li><a class="dropdown-item" href="collections" style="Font-family:Helvetica, Arial, sans-serif;
+
+                    Font-size : 14px;
+                    
+                    Font-weight: 500;
+                    
+                    Line-height: 80px;
+                    
+                    Font-color: rgb(40, 44, 63)"><h5>collections</h5></a></li>
+                  <li><a class="dropdown-item" href="#" style="Font-family:Helvetica, Arial, sans-serif;
+
+                    Font-size : 14px;
+                    
+                    Font-weight: 500;
+                    
+                    Line-height: 80px;
+                    
+                    Font-color: rgb(40, 44, 63)"><h5>Mens</h5></a></li>
                  
-                  <li><a class="dropdown-item" href="#"><h5>Inners</h5></a></li>
+                  <li><a class="dropdown-item" href="#" style="Font-family:Helvetica, Arial, sans-serif;
+
+                    Font-size : 14px;
+                    
+                    Font-weight: 500;
+                    
+                    Line-height: 80px;
+                    
+                    Font-color: rgb(40, 44, 63)"><h5>Inners</h5></a></li>
                 </ul>
               </li>
               <li class="nav-item" style="margin-left: 20%;">
-                <a class="nav-link active" href="#" ><h4>Contact</h4></a>
+                <a class="nav-link active" href="#" style="Font-family:Helvetica, Arial, sans-serif;
+
+                Font-size : 14px;
+                
+                Font-weight: 500;
+                
+                Line-height: 80px;
+                
+                Font-color: rgb(40, 44, 63)"><h4>Contact</h4></a>
               </li>
               
               <li class="nav-item dropdown" style="margin-left: 20%;">
@@ -67,36 +430,117 @@ width:100px;
                 
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="collections"><h5>My Orders</h5></a></li>
-                  <li><a class="dropdown-item" href="#"><h5>Edit Profile</h5></a></li>
+                  <li><a class="dropdown-item" href="collections" style="Font-family:Helvetica, Arial, sans-serif;
+
+                    Font-size : 14px;
+                    
+                    Font-weight: 500;
+                    
+                    Line-height: 80px;
+                    
+                    Font-color: rgb(40, 44, 63)"><h5>My Orders</h5></a></li>
+                  <li><a class="dropdown-item" href="#" style="Font-family:Helvetica, Arial, sans-serif;
+
+                    Font-size : 14px;
+                    
+                    Font-weight: 500;
+                    
+                    Line-height: 80px;
+                    
+                    Font-color: rgb(40, 44, 63)"><h5>Edit Profile</h5></a></li>
                  
-                  <li><a class="dropdown-item" href="#"><h5>Logout</h5></a></li>
+                  <li><a class="dropdown-item" href="#" style="Font-family:Helvetica, Arial, sans-serif;
+
+                    Font-size : 14px;
+                    
+                    Font-weight: 500;
+                    
+                    Line-height: 80px;
+                    
+                    Font-color: rgb(40, 44, 63)" style="Font-family:Helvetica, Arial, sans-serif;
+
+Font-size : 14px;
+
+Font-weight: 500;
+
+Line-height: 80px;
+
+Font-color: rgb(40, 44, 63)"><h5>Logout</h5></a></li>
                 </ul>
               </li>
             </ul>
             <form class="d-flex">
      
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
               <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
           </div>
         </div>
       </nav>
     </div>
-
-    <div class="container-fluid">
-      <form action="/show" method="post">
-        <select class="form-select" name="type" >
-            <option >clothes</option>
-            <option >Shoes</option>
-            <option >Accessories</option>
-           
-          </select>
-        <input type="submit">
-    </form>
+    <!--new card-->
+  <div class="container">
+ 
+<div class="container">
+  <div class="card">
+    <img src="./img/new/m2.jpg">
+    <div class="content">
+      <h2 class="glow" style="color: orange;">Mens</h2>
+      <p class="glow">New branded clothes for mens. </p>
+      <div class="container-fluid">
+        <form action="/show" method="post">
+          <select class="form-select" name="type" hidden>
+              <option >clothes</option>
+              <option >Shoes</option>
+              <option >womens</option>
+              <option >Accessories</option>
+             
+            </select>
+          <button  type="submit" style="color: black;">Explore</button>
+      </form>
+      </div>
     </div>
+  </div>
+  
+  <div class="card">
+    <img src="./img/new/f6.jpg">
+    <div class="content">
+      <h2 class="glow" style="color: orange;">Womens</h2>
+      <p class="glow">Party wears for womens are available at low cost. </p>
+      <div class="container-fluid">
+        <form action="/show" method="post">
+          <select class="form-select" name="type" hidden>
+              <option >womens</option>
+              <option >Accessories</option>
+             
+            </select>
+          <button  type="submit">Explore</button>
+      </form>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card">
+    <img src="./img/new/c.jpg">
+    <div class="content">
+      <h2 class="glow" style="color: orange;">Kids</h2>
+      <p class="glow">New arrivals for kids . </p>
+      <div class="container-fluid">
+        <form action="/show" method="post">
+          <select class="form-select" name="type" hidden>
+              <option >Accessories</option>
+             
+            </select>
+          <button  type="submit">Explore</button>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+  <!--end new card-->
 
-
+<!--slid1-->
 <div class="container-fluid" style="width:auto; height: 50%;margin-bottom:200px;">
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
@@ -129,47 +573,166 @@ width:100px;
     </button>
   </div>
 </div>
-<!-- card -->
-<div class="container-fluid">
-  <div class="row row-cols-1 row-cols-md-4 g-4" style="width:100%; height: 80%;">
-    <div class="col">
-      <div class="card h-100 w-100 " >
-        <img src="img/100.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-      </div>
+<!-- //watch -->
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../img/womens/w1.jpg" class="d-block w-100" alt="...">
     </div>
-    <div class="col">
-      <div class="card h-100 w-100">
-        <img src="img/101.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-      </div>
+    <div class="carousel-item">
+      <img src="../img/womens/w2.jpg" class="d-block w-100" alt="...">
     </div>
-    <div class="col">
-      <div class="card h-100 w-100">
-        <img src="img/102.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card h-100 w-100">
-        <img src="img/103.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-      </div>
+    <div class="carousel-item">
+      <img src="../img/womens/w3.jpg" class="d-block w-100" alt="...">
     </div>
   </div>
 </div>
+
+<!--products-->
+<div class="gs-cards-container">
+  <div class="gs-cards-grid">
+    <a class="gs-card" style="background-image: url('./img/new/m5.jpg')">
+      <div class="gs-card-data">
+        <div class="gs-card-over-header">
+
+        </div>
+        <div class="gs-card-header">
+          
+        </div>
+        <div class="gs-card-content">
+          <button class="btn btn-outline-primary">cart</button>
+        </div>
+      </div>
+    </a>
+
+    <a class="gs-card" style="background-image: url('./img/new/m6.jpg')">
+      <div class="gs-card-data">
+        <div class="gs-card-over-header">
+        
+        </div>
+        <div class="gs-card-header">
+        
+        </div>
+        <div class="gs-card-content">
+          <button class="btn btn-outline-primary">cart</button>
+        </div>
+      </div>
+    </a>
+
+    <a class="gs-card" style="background-image: url('./img/new/m4.jpg')">
+      <div class="gs-card-data">
+        <div class="gs-card-over-header">
+        
+        </div>
+        <div class="gs-card-header">
+        
+        </div>
+        <div class="gs-card-content">
+          <button class="btn btn-outline-primary">cart</button>
+        </div>
+      </div>
+    </a>
+
+    <a class="gs-card" style="background-image: url('./img/new/m1.jpg')">
+      <div class="gs-card-data">
+        <div class="gs-card-over-header">
+        
+        </div>
+        <div class="gs-card-header">
+        
+        </div>
+        <div class="gs-card-content">
+          <button class="btn btn-outline-primary">cart</button>
+       </div>
+      </div>
+    </a>
+
+    <a class="gs-card" style="background-image: url('./img/new/m7.jpg')">
+      <div class="gs-card-data">
+        <div class="gs-card-over-header">
+     
+        </div>
+        <div class="gs-card-header">
+  
+        </div>
+        <div class="gs-card-content">
+          <button class="btn btn-outline-primary">cart</button>
+        </div>
+      </div>
+    </a>
+
+    <a class="gs-card" style="background-image: url('./img/new/f4.jpg')">
+      <div class="gs-card-data">
+        <div class="gs-card-over-header">
+        
+        </div>
+        <div class="gs-card-header">
+         
+        </div>
+        <div class="gs-card-content">
+          <button class="btn btn-outline-primary">cart</button>
+        </div>
+      </div>
+    </a>
+
+    <a class="gs-card" style="background-image: url('./img/new/f6.jpg')">
+      <div class="gs-card-data">
+        <div class="gs-card-over-header">
+       
+        </div>
+        <div class="gs-card-header">
+ 
+        </div>
+        <div class="gs-card-content">
+          <button class="btn btn-outline-primary">cart</button>
+        </div>
+      </div>
+    </a>
+
+    <a class="gs-card" style="background-image: url('./img/new/f5.jpg')">
+      <div class="gs-card-data">
+        <div class="gs-card-over-header">
+   
+        </div>
+        <div class="gs-card-header">
+         
+        </div>
+        <div class="gs-card-content">
+          <button class="btn btn-outline-primary">cart</button>
+        </div>
+      </div>
+    </a>
+
+    <a class="gs-card" style="background-image: url('./img/new/f1.jpg')">
+      <div class="gs-card-data">
+        <div class="gs-card-over-header">
+       
+        </div>
+        <div class="gs-card-header">
+         
+        </div>
+        <div class="gs-card-content">
+          <button class="btn btn-outline-primary">cart</button>
+        </div>
+      </div>
+    </a>
+
+    <a class="gs-card" style="background-image: url('./img/new/f2.jpg')">
+      <div class="gs-card-data">
+        <div class="gs-card-over-header">
+         
+        </div>
+        <div class="gs-card-header">
+         
+        </div>
+        <div class="gs-card-content">
+          <button class="btn btn-outline-primary">cart</button>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+<!--products end-->
 </body>
 <script src="js/script.js"></script>
 </html>

@@ -2,6 +2,8 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
@@ -15,7 +17,7 @@
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <!-- CSS only -->
-<title>Products-Mens Fashion</title>
+<title>Products-Fashioner</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <style>
 
@@ -36,7 +38,10 @@
     margin: 4px 2px;
     cursor: pointer;
   }
-  
+
+.checked {
+  color: orange;
+}
   .button5 {border-radius: 100%;}
  
   * {
@@ -82,6 +87,19 @@
   }
   </style>
 </head>
+<script >
+	$(document).ready(function(){
+		$("#myinput").on("keyup",function(){
+		var value = $(this).val().toLowerCase();
+		$("#card div").filter(function(){
+			$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+
+		});
+	});
+		});
+
+
+</script>
 <body>
   <div>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -140,11 +158,25 @@
       <div class="card-body" style="background:whitesmoke;">
         <img src="<%= data.image %>" class="card-img-top"  alt="" srcset="">
         <h2 class="card-title" style="color:black;"><%= data.name %></h2>
-        <h2 class="card-title" style="color: green;">Size</h2>
+    
         <a class="card-text" style="color:black;text-decoration: none;"><h5><%= data.size %></h5></a>
-        <h2 class="card-title">Price:</h2>
-        <a class="card-text" style="color:darkblue;font-size: 20px; text-decoration: none ;color: green;"><h5><%= data.price %></h5><span style="color: red;"><del><h5><%= data.dprice %></h5></del></span></a>
-        <a class="card-text" style="color:darkblue;font-size: 20px; text-decoration: none;color: darkgray;"><h5><%= data.discription %></h5></a>
+        <a style="color: red;margin-right:100px;margin-left: -10px;"><del><h5>Rs.<%= data.price %></h5></del></a>
+        <a class="card-text" style="color:darkblue;font-size: 20px;text-decoration: none ;color: green;"><h5>Rs.<%= data.dprice %></h5></a>
+
+        <a class="card-text" style="color:darkblue;font-size: 20px;padding-left: -60px;text-decoration: none;transform: translatex(60px);color: darkgray;"><h5><%= data.discription %></h5></a>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <form action="" method="">
+          <input type="hidden" name="id" value="<%= data._id %>">
+        <button type="submit" class="btn btn-outline-primary" style="margin-right: 90%;padding: 10px 24px;border-radius: 14px;"><i class="fa fa-shopping-cart"><span style="font-size:20px;padding:10px">cart</span></i></button>
+         </form>
+         <form action="" method="">
+          <input type="hidden" name="id" value="<%= data._id %>">
+        <button type="submit" class="btn btn-outline-success" style="margin-left: 50%;margin-top:-80px;padding: 10px 24px;border-radius: 14px;"><i class="fa fa-heart" style="color: red;"><span style="font-size:20px;padding:10px;">Like</span></i></button>
+         </form>
         <div class="container-fluid">
        
     </div>

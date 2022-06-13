@@ -57,6 +57,14 @@ app.get("/",function(req,res){
    
     res.render("home");
 }); 
+app.get("/search",function(req,res){
+   
+    res.render("search");
+}); 
+app.get("/show",function(req,res){
+   
+    res.render("show");
+}); 
 app.get("/register",function(req,res){
    
     res.render("register");
@@ -74,6 +82,10 @@ app.get("/index",function(req,res){
 app.get("/login",function(req,res){
    
     res.render("login");
+});
+app.get("/error",function(req,res){
+   
+    res.render("error");
 });
 
 app.get("/index",function(req,res){
@@ -117,6 +129,7 @@ app.post("/register",function(req,res){
         if(err)
         {
             console.log(err);
+            res.redirect("error");
         }
         else{
             res.render("login");
@@ -132,6 +145,7 @@ app.post("/login",function(req,res){
         if(err)
         {
             console.log(err);
+            res.redirect("error");
         }
         else{
             if(foundUser)
@@ -170,6 +184,7 @@ app.post("/products",store.single('image'),function(req,res){
         if(err)
         {
             console.log(err);
+            res.redirect("error");
         }
         // else{
         //     console.log(product);
@@ -231,7 +246,7 @@ app.post("/products",store.single('image'),function(req,res){
             Addproducts.find({},function(err,found)
             {  if(err)
               {
-                
+                res.redirect("error");
               }
               else
               {
@@ -259,7 +274,7 @@ app.post("/products",store.single('image'),function(req,res){
           Addproducts.find({},function(err,found)
           {  if(err)
             {
-              
+                res.redirect("error");
             }
             else
             {
